@@ -6,15 +6,15 @@ using System.Threading.Tasks;
 
 namespace Stonks
 {
-    // Вся аналитика с акциями
     public class Stock
     {
-        public Stock(/*List<string> exchanges, decimal profitability,*/decimal price, CompanyInfo company,
+        public ulong SharesAmount { get; set; }
+
+        public Stock(ulong sharesAmount, CompanyInfo company,
             Volatility volatility = Volatility.Low, bool isDividends = false)
         {
-            //Exchanges = exchanges;
-            //Profitability = profitability;
-            Price = price;
+            SharesAmount = sharesAmount;
+            Price = company.Value / sharesAmount;
             Company = company;
             VolatilityRate = volatility;
             IsDividends = isDividends;
@@ -22,7 +22,7 @@ namespace Stonks
         // Рассчитывается при IPO
         public decimal Profitability { get; private set; }
         public CompanyInfo Company { get; private set; }
-        // Определяет, какие бодаются больше всего.
+        // Определяет, какие акции бодаются больше всего.
         public enum Volatility
         {
             Low,

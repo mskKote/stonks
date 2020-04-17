@@ -1,17 +1,7 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Stonks
 {
-    // Отвечает за манипуляции с компанией
-    // То есть создаётся компания, 
-    // а затем она хочет сделать эмиссию акций
-    // А может купить другую компанию. Может обанкротиться итд
-    // А в обще этот класс, от которого наследуются все компании. 
-    // Хотя лучше бы сделать пару интерфейсов
     public class Company : ICompany
     {
         #region ShadowEcomonics
@@ -34,13 +24,9 @@ namespace Stonks
 
 
         // Первым делом нужно прописать конструкторы всех классов.
-        public Company(string name, decimal assets,
-          Dictionary<Company, ulong> shareholderEntity,
-          Dictionary<string, ulong> shareholderIndividual,
-          CompanyInfo.Potential potential = CompanyInfo.Potential.High)
+        public Company(CompanyInfo info)
         {
-            CompanyInfo = new CompanyInfo(name, potential, assets,
-                                shareholderEntity, shareholderIndividual);
+            CompanyInfo = info;
         }
 
         /// <summary>
@@ -50,7 +36,7 @@ namespace Stonks
         public void GoIPO(double percent, ulong sharesAmount)
         {
             shadowCapital = 0;
-            IPO = Exchange.MakeIPO(this, percent, sharesAmount);
+            IPO = Exchange.MakeIPO(this, sharesAmount);
         }
 
         public void BuyStocks(decimal capital)

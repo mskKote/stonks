@@ -5,13 +5,12 @@ namespace Stonks
 {
     public class CompanyInfo
     {
-        public CompanyInfo(string name, Potential potential, decimal assets,
-          Dictionary<Company, ulong> shareholderEntity,
-          Dictionary<string, ulong> shareholderIndividual)
+        public CompanyInfo(string name, decimal assets,
+          Dictionary<Company, ulong> shareholderEntity = null,
+          Dictionary<string, ulong> shareholderIndividual = null)
         {
             Name = name;
             Foundation = DateTime.Now;
-            RaisePotential = potential;
             Assets = assets;
             InnerCapital = assets;
             ShareholderEntity = shareholderEntity;
@@ -22,13 +21,13 @@ namespace Stonks
         public Dictionary<Company, ulong> ShareholderEntity;
         public Dictionary<string, ulong> ShareholderIndividual;
 
-        public ulong ShareAmount { get; private set; }
+        public ulong ShareAmount { get; set; }
         public decimal Value { get; set; }
         public decimal InnerCapital { get; set; }
         public decimal Assets { get; set; }
 
 
-        // Абстрактный потенциал. Чем
+        // Абстрактный потенциал
         public enum Potential
         {
             Decay = -1,
