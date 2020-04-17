@@ -1,0 +1,7 @@
+C:\Users\Vitaly\source\repos\Stonks\Stonks\bin\Debug\Stonks.exe.config
+C:\Users\Vitaly\source\repos\Stonks\Stonks\bin\Debug\Stonks.exe
+C:\Users\Vitaly\source\repos\Stonks\Stonks\bin\Debug\Stonks.pdb
+C:\Users\Vitaly\source\repos\Stonks\Stonks\obj\Debug\Stonks.csprojAssemblyReference.cache
+C:\Users\Vitaly\source\repos\Stonks\Stonks\obj\Debug\Stonks.csproj.CoreCompileInputs.cache
+C:\Users\Vitaly\source\repos\Stonks\Stonks\obj\Debug\Stonks.exe
+C:\Users\Vitaly\source\repos\Stonks\Stonks\obj\Debug\Stonks.pdb
